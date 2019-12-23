@@ -116,7 +116,7 @@ done
 # ask the user questions about his/her preferences
 read -ep " please enter your preferred timezone: " -i "Europe/Moscow" timezone
 read -ep " please enter your preferred username: " -i "lavka" username
-read -sp " please enter your preferred password: " -i password
+read -sp " please enter your preferred password: " password
 printf "\n"
 read -sp " confirm your preferred password: " password2
 printf "\n"
@@ -237,7 +237,7 @@ spinner $!
 
 # make iso bootable (for dd'ing to  USB stick)
 if [[ $bootable == "yes" ]] || [[ $bootable == "y" ]]; then
-    isohybrid $tmp/$new_iso_name
+    isohybrid --partok $tmp/$new_iso_name
 fi
 
 # cleanup
