@@ -97,7 +97,7 @@ while true; do
                 download_location="http://releases.ubuntu.com/$prec/"           # location of the file to be downloaded
                 new_iso_name="ubuntu-$prec_vers-server-amd64-unattended.iso"    # filename of the new iso file to be created
                 break;;
-	    [2]* )  download_file="ubuntu-$trus_vers-server-amd64.iso"
+	      [2]* )  download_file="ubuntu-$trus_vers-server-amd64.iso"
                 download_location="http://releases.ubuntu.com/$trus/"
                 new_iso_name="ubuntu-$trus_vers-server-amd64-unattended.iso"
                 break;;
@@ -237,7 +237,7 @@ spinner $!
 
 # make iso bootable (for dd'ing to  USB stick)
 if [[ $bootable == "yes" ]] || [[ $bootable == "y" ]]; then
-    isohybrid --partok $tmp/$new_iso_name
+    isohybrid $tmp/$new_iso_name
 fi
 
 # cleanup
